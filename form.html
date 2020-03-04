@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/form.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Registration Form</title>
+    <style>
+        #delegates,#model-making{
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("input[type='radio']").click(function(){
+                var radioValue = $("input[name='apply']:checked").val();
+                if(radioValue=="IP"){
+                   $("#ip").css("display","block")
+                   $("#delegates").css("display","none")
+                   $("#model-making").css("display","none")
+                }
+                if(radioValue=="DELEGATES"){
+                   $("#ip").css("display","none")
+                   $("#delegates").css("display","block")
+                   $("#model-making").css("display","none")
+                }
+                if(radioValue=="MODEL_MAKING"){
+                   $("#ip").css("display","none")
+                   $("#delegates").css("display","none")
+                   $("#model-making").css("display","block")
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+   <div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Registration Form</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form>
+            <div class="input_field radio_option">
+                <h5>Applying For:</h5>
+                <input type="radio" name="apply" id="IP" value="IP" checked>
+                <label for="IP">IP</label>
+                <input type="radio" name="apply" id="DELEGATES" value="DELEGATES">
+                <label for="DELEGATES">Delegates</label>
+                <input type="radio" name="apply" id="MODEL_MAKING" value="MODEL_MAKING">
+                <label for="MODEL_MAKING">Model Making</label>
+            </div>
+            <label for="Name">First Participant Name</label>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input type="text" name="Name1" placeholder="First Participant Name" required />
+              </div>      
+              <label for="Email">Email Id1</label>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input type="email" name="email1" placeholder="Email Id1" required />
+          </div>
+          <label for="Name">Second Participant Name</label>
+            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                <input type="text" name="Name2" placeholder="Second Participant Name" required />
+              </div>      
+              <label for="Email">Email Id2</label>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input type="email" name="email2" placeholder="Email Id2" required />
+          </div>
+           <div id="ip">
+          <div class="input_field select_option">
+            <label for="profile">Profile</label>
+            <select placeholder="Select a profile">
+              <option>Caricaturist</option>
+              <option>Photography</option>
+              <option>Reporter</option>
+            </select>
+            <div class="select_arrow"></div>
+          </div>
+        </div>
+        <div id="delegates">
+          <div class="input_field select_option">
+            <select>
+              <option>Select a community</option>
+              <option>CCS</option>
+              <option>WHO</option>
+              <option>UNGA</option>
+              <option>AIPPM</option>
+            </select>
+            <div class="select_arrow"></div>
+          </div>
+        </div>
+        <div id="model-making">
+              <div class="input_field select_option">
+                <select>
+                  <option>Select a country</option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                </select>
+                <div class="select_arrow"></div>
+              </div>
+            </div>
+            <div class="input_field checkbox_option">
+            	<input type="checkbox" id="cb1">
+    			<label for="cb1">I agree with terms and conditions</label>
+            </div>
+            <div class="input_field checkbox_option">
+            	<input type="checkbox" id="cb2">
+    			<label for="cb2">I want to receive the newsletter</label>
+            </div>
+          <input class="button" type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+        const scriptURL = ''
+        const form = document.forms['submit-to-google-sheet']
+        console.log(form);
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert('Success!', response))
+                .catch(error => {
+                    alert('Error!', error.message)})
+        })
+    </script>
+</body>
+</html>
