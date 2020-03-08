@@ -13,22 +13,31 @@
     </style>
     <script>
         $(document).ready(function(){
-            $("input[type='radio']").click(function(){
+            $("input[type='radio']").change(function(){
                 var radioValue = $("input[name='apply']:checked").val();
                 if(radioValue=="IP"){
                    $("#ip").css("display","block")
                    $("#delegates").css("display","none")
                    $("#model-making").css("display","none")
+                   $(".ip1").attr("required",true)
+                   $(".d1").attr("required",false)
+                   $(".mm1").attr("required",false)
                 }
                 if(radioValue=="DELEGATES"){
                    $("#ip").css("display","none")
                    $("#delegates").css("display","block")
                    $("#model-making").css("display","none")
+                   $(".ip1").attr("required",false)
+                   $(".d1").attr("required",true)
+                   $(".mm1").attr("required",false)
                 }
                 if(radioValue=="MODEL_MAKING"){
                    $("#ip").css("display","none")
                    $("#delegates").css("display","none")
                    $("#model-making").css("display","block")
+                   $(".ip1").attr("required",false)
+                   $(".d1").attr("required",false)
+                   $(".mm1").attr("required",true)
                 }
             });
         });
@@ -42,7 +51,7 @@
     </div>
     <div class="row clearfix">
       <div class="">
-        <form>
+        <form name="submit-to-google-sheet">
             <div class="input_field radio_option">
                 <h5>Applying For:</h5>
                 <input type="radio" name="apply" id="IP" value="IP" checked>
@@ -52,74 +61,92 @@
                 <input type="radio" name="apply" id="MODEL_MAKING" value="MODEL_MAKING">
                 <label for="MODEL_MAKING">Model Making</label>
             </div>
-            <div id="ip">
+            
+           <div id="ip">
             <label for="Name">First Participant Name</label>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                <input type="text" name="Name1" placeholder="First Participant Name" required />
+                <input type="text" name="NAME-1" placeholder="First Participant Name"  class="ip1" required/>
               </div>      
               <label for="Email">Email Id1</label>
           <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-            <input type="email" name="email1" placeholder="Email Id1" required />
+            <input type="email" name="EMAIL-1" placeholder="Email Id1"  class="ip1" required/>
+          </div>
+          <label for="contact">Contact-no</label>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+            <input type="text" name="CONTACT-1" placeholder="Contact-no" maxlength="10"  class="ip1" required/>
           </div>
           <div class="input_field select_option">
             <label for="profile">Profile</label>
-            <select>
-              <option></option>
-              <option>Caricaturist</option>
-              <option>Photography</option>
-              <option>Reporter</option>
+            <select name="PROFILE" class="ip1" required>
+              <option value="">Select a profile</option>
+              <option name="caricaturist" value="Caricaturist">Caricaturist</option>
+              <option name="photography" value="Photography">Photography</option>
+              <option name="reporter" value="Reporter">Reporter</option>
             </select>
             <div class="select_arrow"></div>
           </div>
         </div>
+
         <div id="delegates">
           <label for="Name">First Participant Name</label>
           <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-              <input type="text" name="Name1" placeholder="First Participant Name" required />
+              <input type="text" name="NAME_1" placeholder="First Participant Name"  class="d1"/>
             </div>      
             <label for="Email">Email Id1</label>
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-          <input type="email" name="email1" placeholder="Email Id1" required />
+          <input type="email" name="EMAIL_1" placeholder="Email Id1"  class="d1"/>
+        </div>
+        <label for="contact">Contact-no</label>
+        <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+          <input type="text" name="CONTACT_1" placeholder="Contact-no" maxlength="10"  class="d1"/>
         </div>
         <div class="input_field select_option">
-          <label for="commity">Select a commity</label>
-          <select>
-            <option>Select a commity</option>
-            <option>CCS</option>
-            <option>WHO</option>
-            <option>UNGA</option>
-            <option>AIPPM</option>
+          <label for="COMMITY">Select a commity</label>
+          <select name="COMMITY" class="d1">
+            <option value="">Select a commity</option>
+            <option value="CCS" name="CCS">CCS</option>
+            <option value="WHO" name="WHO">WHO</option>
+            <option value="UNGA" name="UNGA">UNGA</option>
+            <option value="AIPPM" name="AIPPM">AIPPM</option>
           </select>
           <div class="select_arrow"></div>
         </div>
         <label for="preference1">Portfolio preference 1</label>
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-briefcase"></i></span>
-          <input type="text" name="preference1" placeholder="Portfolio preference 1" required/>
+          <input type="text" name="PREFERENCE_1" placeholder="Portfolio preference 1" class="d1"/>
         </div>
         <label for="preference2">Portfolio preference 2</label>
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-briefcase"></i></span>
-          <input type="text" name="preference2" placeholder="Portfolio preference 2" required />
+          <input type="text" name="PREFERENCE_2" placeholder="Portfolio preference 2"  class="d1"/>
         </div>
       </div>
+
       <div id="model-making">
         <label for="Name">First Participant Name</label>
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-            <input type="text" name="Name1" placeholder="First Participant Name" required />
+            <input type="text" name="NAME1" placeholder="First Participant Name" class="mm1"/>
           </div>      
           <label for="Email">Email Id1</label>
       <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-        <input type="email" name="email1" placeholder="Email Id1" required />
+        <input type="email" name="EMAIL1" placeholder="Email Id1" class="mm1"/>
+      </div>
+      <label for="contact">Contact-no</label>
+      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+        <input type="text" name="CONTACT1" placeholder="Contact-no" maxlength="10" class="mm1"/>
       </div>
       <label for="Name">Second Participant Name</label>
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-            <input type="text" name="Name2" placeholder="Second Participant Name" required />
+            <input type="text" name="NAME2" placeholder="Second Participant Name" class="mm1"/>
           </div>      
           <label for="Email">Email Id2</label>
       <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-        <input type="email" name="email2" placeholder="Email Id2" required />
+        <input type="email" name="EMAIL2" placeholder="Email Id2" class="mm1"/>
+      </div>
+      <label for="contact">Contact-no</label>
+      <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+        <input type="text" name="CONTACT2" placeholder="Contact-no" maxlength="10" class="mm1"/>
       </div>
     </div>
-
             <div class="input_field checkbox_option">
             	<input type="checkbox" id="cb1">
     			<label for="cb1">I agree with terms and conditions</label>
@@ -128,24 +155,54 @@
             	<input type="checkbox" id="cb2">
     			<label for="cb2">I want to receive the newsletter</label>
             </div>
-          <input class="button" type="submit" value="Register" />
+          <input class="button" type="submit" value="Submit"/>
         </form>
       </div>
     </div>
   </div>
-</div>
-    <script>
-        const scriptURL = ''
-        const form = document.forms['submit-to-google-sheet']
-        console.log(form);
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => alert('Success!', response))
-                .catch(error => {
-                    alert('Error!', error.message)})
-        })
-    </script>
+</div>  
+ <script>
+   const form = document.forms['submit-to-google-sheet']
+   form.addEventListener('submit', e => {
+    var radioValue = $("input[name='apply']:checked").val();
+    var scriptURL="";
+    if(radioValue=="IP"){
+       scriptURL ='https://script.google.com/macros/s/AKfycbzMENX5gTVpQD3FwIwk48jm6FJH8jeVdD6xUOpVAyKmraxXnCEh/exec';
+       e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                alert('Success!', response)
+                //console.log(form.elements.framework)
+                })
+            .catch(error => {
+                alert('Error!', error.message)
+            })
+    }
+    else if(radioValue=="DELEGATES"){
+       scriptURL ='https://script.google.com/macros/s/AKfycbwmVlwoVYwHn6DnYeqA-pbqwpTCiDfebACAtJqswK0fv5zOvm8f/exec';
+       e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                alert('Success!', response)
+                //console.log(form.elements.framework)
+                })
+            .catch(error => {
+                alert('Error!', error.message)
+            })
+    }
+    else if(radioValue=="MODEL_MAKING"){
+       scriptURL ='https://script.google.com/macros/s/AKfycbxP_BQAFFnyziuqcW9MXwBTnUjFBYwOWbOuFIdUs8O2hQi6724/exec';
+       e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                alert('Success!', response)
+                //console.log(form.elements.framework)
+                })
+            .catch(error => {
+                alert('Error!', error.message)
+            })
+    }
+    });
+</script>
 </body>
 </html>
