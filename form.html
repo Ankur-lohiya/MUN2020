@@ -40,6 +40,11 @@
                    $(".mm1").attr("required",true)
                 }
             });
+            $("#c1").change(function(){
+              var selectValue=$(this).children("option:checked").val();
+              $("#c2").children("option").show();
+              $("#c2").children("option[value="+selectValue+"]").hide();
+            });
         });
     </script>
 </head>
@@ -101,8 +106,8 @@
           <input type="text" name="CONTACT_1" placeholder="Contact-no" maxlength="10"  class="d1"/>
         </div>
         <div class="input_field select_option">
-          <label for="COMMITTEE">Select a committee</label>
-          <select name="COMMITY" class="d1">
+          <label for="COMMITTEE">Select a committee preference 1</label>
+          <select name="COMMITY_1" class="d1" id="c1">
             <option value="">Select a committee</option>
             <option value="CCS" name="CCS">CCS</option>
             <option value="WHO" name="WHO">WHO</option>
@@ -111,13 +116,24 @@
           </select>
           <div class="select_arrow"></div>
         </div>
-        <label for="preference1">Portfolio preference 1</label>
+        <label for="preference1">Portfolio preference</label>
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-briefcase"></i></span>
-          <input type="text" name="PREFERENCE_1" placeholder="Portfolio preference 1" class="d1"/>
+          <input type="text" name="PREFERENCE_1" placeholder="Portfolio preference" class="d1"/>
         </div>
-        <label for="preference2">Portfolio preference 2</label>
+        <div class="input_field select_option">
+          <label for="COMMITTEE">Select a committee preference 2</label>
+          <select name="COMMITY_2" id="c2">
+            <option value="">Select a committee</option>
+            <option value="CCS" name="CCS">CCS</option>
+            <option value="WHO" name="WHO">WHO</option>
+            <option value="UNGA" name="UNGA">UNGA</option>
+            <option value="AIPPM" name="AIPPM">AIPPM</option>
+          </select>
+          <div class="select_arrow"></div>
+        </div>
+        <label for="preference1">Portfolio preference</label>
         <div class="input_field"> <span><i aria-hidden="true" class="fa fa-briefcase"></i></span>
-          <input type="text" name="PREFERENCE_2" placeholder="Portfolio preference 2"  class="d1"/>
+          <input type="text" name="PREFERENCE_2" placeholder="Portfolio preference"/>
         </div>
       </div>
 
