@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli|Boogaloo:400,400i,500,500i,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli|Boogaloo:400,400i,500,500i,600&display=swap");
-
+@import url('https://fonts.googleapis.com/css?family=Mukta:300,400,600,700&display=swap');
 .flex-center-start {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,7 +25,7 @@
 /* small mobile :320px. */
 /* Large Mobile :480px. */
 body {
-  font-family: "Muli", sans-serif;
+  font-family: 'Mukta', sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -66,7 +66,7 @@ a:hover,
 
 a,
 button {
-  color: #1F1F1F;
+  color: rgb(252, 249, 249);
   outline: medium none;
 }
 
@@ -75,7 +75,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Anton", sans-serif;
+  font-family: "Mukta", sans-serif;
   color: #001D38;
 }
 
@@ -89,24 +89,26 @@ h6 a {
 }
 
 a {
-  font-family: "Muli", sans-serif;
+  font-family: "Mukta", sans-serif;
 }
 
 input::placeholder {
-  font-family: "Muli", sans-serif;
+  font-family: "Mukta", sans-serif;
 }
 
 textarea::placeholder {
-  font-family: "Muli", sans-serif;
+  font-family: "Mukta", sans-serif;
 }
 
 ul {
+  font-family: 'Mukta', sans-serif;
   margin: 0px;
   padding: 0px;
 }
 
 li {
   list-style: none;
+  font-family: 'Mukta', sans-serif;
 }
 
 p {
@@ -116,7 +118,7 @@ p {
   margin-bottom: 0;
   font-weight: 400;
   margin-bottom: 0px;
-  font-family: "Muli", sans-serif;
+  font-family: "Mukta", sans-serif;
 }
 
 label {
@@ -451,7 +453,7 @@ h3 {
   color: #FF4533;
   display: inline-block;
   padding: 12px 44px;
-  font-family: "Anton", sans-serif;
+  font-family: "Mukta", sans-serif;
   font-size: 16px;
   font-weight: 400;
   border: 0;
@@ -684,6 +686,56 @@ h3 {
   background: #ed1c23;
   border: none;
   box-shadow: 0 0 5px #ed1c23, 0 0 25px #ed1c23, 0 0 50px #ed1c23, 0 0 200px #ed1c23;
+}
+
+.button-two {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  padding: 20px;
+  width: 300px;
+  height: 90px;
+  
+  transition: all 0.5s;
+  text-align: center;
+  cursor: pointer;
+  font-size:20px;
+  margin: 0 0 0 0px;
+  color: white; 
+}
+
+
+.button-two span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;;
+  transition: 0.5s;
+}
+
+.button-two span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-two:hover span {
+  padding-right: 25px;
+  color: #E30613;
+}
+
+.button-two:hover span:after {
+  opacity: 1;
+  right: 0;
+  color: #E30613;
+}
+@media(max-width: 987px){
+  .button-two{
+    transform: translateY(1300%);
+    overflow: hidden;
+  }
 }
 
 .section_title h3 {
@@ -938,7 +990,7 @@ h3 {
 }
 
 .header-area .main-header-area {
-  background: #000;
+  background: rgba(255, 255, 255, 0);
   padding-top: 8px;
 }
 
@@ -968,11 +1020,13 @@ h3 {
 
 .header-area .main-header-area .logo-img {
   text-align: center;
-  max-width: 100;
+  max-width: 10;
+  
 }
 
 .header-area .main-header-area .logo-img img{
   height: 90px;
+  
 }
 
 @media (max-width: 767px) {
@@ -1012,12 +1066,12 @@ h3 {
 .header-area .main-header-area .main-menu ul li {
   display: inline-block;
   position: relative;
-  margin: 0 20px;
+  margin: 0 12px;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .header-area .main-header-area .main-menu ul li {
-    margin: 0 18px;
+    margin: 0 10px;
   }
 }
 
@@ -1034,7 +1088,7 @@ h3 {
   font-weight: 400;
   display: inline-block;
   padding: 30px 0 30px 0;
-  font-family: "Anton", sans-serif;
+  font-family: "Mukta", sans-serif;
   position: relative;
   text-transform: uppercase;
 }
