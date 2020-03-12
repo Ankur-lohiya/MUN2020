@@ -1,31 +1,21 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CHITKARA MUN 2020</title>
     <meta name="description" content="Explore Website">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="shortcut icon" type="image/x-icon" href="img/mun_logo_black.png">
-
     <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/slicknav.css">
-
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        var scene = document.getElementById('scene');
-        var parallax = new Parallax(scene);
-    </script>
     <!-- <link rel="stylesheet" href="responsive.css"> -->
 </head>
 
@@ -107,25 +97,28 @@
     <!-- slider_area_end -->
 
     <!--timer_area-->
-    <div class="timer_area black_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center">
-                        <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">COMING SOON IN</h3>
+    <div class="container" style="padding:15px ;">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="circle-outer">
+                    <div class="circle-inner" style="background: url(./img/timer-bg1.jpg) top center no-repeat;">
+                        <h3 class="date"><b></b><br><span>April</span></h3>
+                        <div id="timer"></div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mb-73" id="timer"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section_title text-center">
-                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">LOREM IPSUM</h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">LOREM IPSUM</p>
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                <h3>Climate Change Summit and MUN</h3>
+                <h2>“The less you know, the more you believe.” ― Bono</h2>
+                <p>Media and journalism have both the capacity and capability to teach, manipulate, sensitise and mobilise the citizenry through information dissemination. A member of the Fourth Estate is characterised by their spirit of inquiry, a dedication to transparency and passion for the written word.
+                    With the decline of media integrity in the modern world, it falls upon the journalists, cartoonists and photographers to uphold the traditional ideals of ethical journalism.
+                    
+                    The story is out there, find it and make it your own.
+                    
+                    Keeping this in mind , we introduce the last committee for the conference , the  International Press .
+                    
+                    Stay tuned for further updates !
+                    CHITKARA INTERNATIONAL CLIMATE CHANGE SUMMIT AND MODEL UNITED NATIONS | 18th - 19th APRIL , 2020 . |</p>
             </div>
         </div>
     </div>
@@ -208,7 +201,7 @@
                                 <img src="img/communities_3.jpg" alt="">
                             </div>
                             <div class="event_heading text-center">
-                                <h4>CCS</h4>
+                                <h4>POSTER PRESENTATION ON SOLUTION MODELS FOR CLIMATE CHANGE ISSUES</h4>
                                 <a href="pages/events.html" class="neon-btn">Register Here</a>
                             </div>
                         </div>
@@ -292,5 +285,12 @@
     <script src="js/plugins.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            for(i=1;i<=18;i++){
+                $(".date b").text(i);
+            }
+        });
+    </script>
 </body>
 </html>

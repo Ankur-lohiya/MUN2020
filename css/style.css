@@ -29,7 +29,27 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-
+.circle-outer{
+  background: -moz-linear-gradient(top,rgba(85,76,185,.9) 0,rgba(236,57,139,.9) 100%);
+  background: -webkit-gradient(linear,bottom top,bottom top,color-stop(0,rgba(85,76,185,.9)),color-stop(100%,rgba(236,57,139,.9)));
+  background: -webkit-linear-gradient(top,rgba(85,76,185,.9) 0,rgba(236,57,139,.9) 100%);
+  background: -o-linear-gradient(top,rgba(85,76,185,.9) 0,rgba(236,57,139,.9) 100%);
+  background: -ms-linear-gradient(top,rgba(85,76,185,.9) 0,rgba(236,57,139,.9) 100%);
+  background: linear-gradient(to top,rgba(85,76,185,.9) 0,rgba(236,57,139,.9) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='rgba(85, 76, 185, .9)', endColorstr='rgba(236, 57, 139, 0.9)', GradientType=0);
+  padding: 15px;
+  border-radius: 50%;
+  max-width: 530px;
+  max-height: 530px;
+  margin: 0 auto;
+}
+.circle-outer .circle-inner{
+  background: rgba(27,39,61,.5);
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+}
 .img {
   max-width: 100%;
   -webkit-transition: 0.3s;
@@ -1939,7 +1959,15 @@ h3 {
   z-index: 0;
   padding-bottom: 7px;
 }
-
+.date span{
+  font-size: 4em;
+  color:white;
+}
+.date b{
+  color: yellow;
+  font-size: 6em;
+  font-weight: 300;
+}
 
 
 #timer {
@@ -1947,10 +1975,8 @@ h3 {
   text-align: center;
   text-transform: uppercase;
   font-family: "Boogaloo", cursive;
-  font-size: 1em;
-  letter-spacing: 2px;
-  margin-top: 0%;
-  margin-left: 0%;
+  font-size: .8em;
+  letter-spacing: 1px;
 }
 
 .days,
@@ -1958,11 +1984,10 @@ h3 {
 .minutes,
 .seconds {
   display: inline-block;
-  padding: 20px;
+  padding: 0px;
   width: 140px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 
 @media (max-width: 767px) {
@@ -1974,23 +1999,6 @@ h3 {
     margin-left: 1px;
   }
 }
-
-.days {
-  background: #950b61;
-}
-
-.hours {
-  background: #98c25e;
-}
-
-.minutes {
-  background: #ff5c1b;
-}
-
-.seconds {
-  background: #429dab;
-}
-
 .numbers {
   font-family: "Boogaloo", cursive;
   color: #fff;

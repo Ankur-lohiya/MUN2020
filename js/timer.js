@@ -1,16 +1,10 @@
-
 const year = (new Date().getFullYear()) + 1;
 const fourthOfJuly = new Date(2020, 4, 18,9,00).getTime();
-
-
 let timer = setInterval(function () {
-
 	// get today's date
 	const today = new Date().getTime();
-
 	// get the difference
 	const diff = fourthOfJuly - today;
-
 	// math
 	let days = Math.floor(diff / (1000 * 60 * 60 * 24));
 	days = days - 30;
@@ -23,7 +17,6 @@ let timer = setInterval(function () {
 		minutes =  0;
 		seconds = 0;
 	}
-
 	// display
 	document.getElementById("timer").innerHTML =
 		"<div class=\"days\"> \
