@@ -102,7 +102,7 @@
             <div class="col-lg-6">
                 <div class="circle-outer">
                     <div class="circle-inner" style="background: url(./img/timer-bg1.jpg) top center no-repeat;">
-                        <h3 class="date"><b></b><br><span>April</span></h3>
+                        <h3 class="date"><b id="1">0</b><br><span>April</span></h3>
                         <div id="timer"></div>
                     </div>
                 </div>
@@ -283,11 +283,18 @@
     <script src="js/timer.js"></script>
     <script src="js/main.js"></script>
     <script>
-        $(document).ready(function(){
-            for(i=1;i<=18;i++){
-                $(".date b").text(i);
-            }
-        });
+            $('#1').waypoint(function() {
+                increment(1, 18);
+            }, {offset: '75%'});
+            function increment(elem, finalVal) {
+            var currVal = parseInt(document.getElementById(elem).innerHTML, 10);
+            if (currVal < finalVal){
+                currVal++;
+                document.getElementById(elem).innerHTML = currVal;
+                setTimeout(function() {
+                    increment(elem, finalVal);
+                    }, 120)}
+            };
     </script>
 </body>
 </html>
