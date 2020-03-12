@@ -905,7 +905,6 @@ h3 {
 
 .rotate{
   animation: rotation 120s infinite linear;
-  
 }
 
 @keyframes rotation {
@@ -916,7 +915,6 @@ h3 {
     transform: rotate(359deg);
   }
 }
-
 .slicknav_menu .slicknav_nav {
   background: #fff;
   float: right;
