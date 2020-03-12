@@ -174,8 +174,8 @@ h3 {
   font-size: 24px;
 }
 
-.black_bg {
-  background: #000000;
+.custom_bg {
+  background-color:#232323;
 }
 
 .mb-65 {
@@ -650,26 +650,64 @@ h3 {
 
 .neon-btn {
   padding: 10px 15px;
-  color: #ed1c23;
+  color: #fd3939;
   font-size: 24px;
   font-weight: 400;
   text-decoration: none;
   text-transform: capitalize;
-  transition: 0.5s;
-  border: 1px solid #ed1c23;
+  border: 1px solid #fd3939;
   border-radius: 3px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.neon-btn:hover{
+  color: whitesmoke;
+  background:  #fd3939;
+}
+.neon-btn,
+.neon-btn::after{
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.neon-btn::before,
+.neon-btn::after {
+  background: #fd3939;
+  content: '';
+  position: absolute;
+  z-index: -1;
 }
 
-.neon-btn:hover,
+.neon-btn::after{
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+  
+}
+.neon-btn:hover::after{
+  height: 100%;
+  width: 135%;
+  color: whitesmoke;
+  background:  #fd3939;
+  z-index: 1;
+  opacity: .1;
+}
+/* .neon-btn:hover,
 .neon-btn:active {
   color: #fff;
-  background: #ed1c23;
+  background: #fd3939;
   box-shadow: 0 0 5px #ed1c23, 0 0 25px #ed1c23, 0 0 50px #ed1c23, 0 0 200px #ed1c23;
 }
-
+*/
 .neon-btn2 a {
   padding: 10px 15px;
-  color: #ed1c23 !important;
+  color: #fd3939 !important;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1.3px;
@@ -741,7 +779,7 @@ h3 {
 .section_title h3 {
   font-size: 80px;
   font-weight: 400;
-  color: #fff;
+  color: #fd3939 !important;
   position: relative;
   z-index: 0;
   padding-bottom: 7px;
@@ -1205,7 +1243,7 @@ h3 {
   -webkit-transition: transform 500ms ease, background 500ms ease;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
   padding: 0px 0px;
-  background: #000;
+  background: #232323;
 }
 
 @media (max-width: 767px) {
